@@ -1,8 +1,8 @@
-# Django-WebCam
+# `Django-WebCam`
 
-Visit IPV4 IP Address : http://192.168.0.18:8000/
+    Visit IPV4 IP Address : http://192.168.0.18:8000/
 
----
+![image](https://github.com/imvickykumar999/Django-WebCam/assets/50515418/38474e55-4c09-44b1-b1dd-694149e5042b)
 
 ### Install Daphne if you haven't already
     pip install daphne

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webcam Stream</title>
+</head>
+<body>
+    <h1>Webcam Stream</h1>
+    <img id="webcam" src="" alt="Webcam feed will appear here" style="width: 640px; height: 480px;">
+    <script>
+        const webcamElement = document.getElementById('webcam');
+        const ws = new WebSocket('ws://' + window.location.host + '/ws/webcam/');
+
+        ws.onmessage = function(event) {
+            webcamElement.src = 'data:image/jpeg;base64,' + event.data;
+        };
+
+        ws.onerror = function(error) {
+            console.error("WebSocket Error: ", error);
+        };
+
+        ws.onopen = function() {
+            console.log("WebSocket connection opened.");
+        };
+
+        ws.onclose = function() {
+            console.log("WebSocket connection closed.");
+        };
+    </script>
+</body>
+</html>
+

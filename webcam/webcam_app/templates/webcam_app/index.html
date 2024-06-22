@@ -3,10 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Webcam Stream</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        #webcam {
+            border: 2px solid #333;
+            border-radius: 10px;
+            width: 640px;
+            height: 480px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Webcam Stream</h1>
-    <img id="webcam" src="" alt="Webcam feed will appear here" style="width: 640px; height: 480px;">
+    <div class="container">
+        <h1>Webcam Stream</h1>
+        <img id="webcam" src="" alt="Webcam feed will appear here">
+    </div>
     <script>
         const webcamElement = document.getElementById('webcam');
         const ws = new WebSocket('ws://' + window.location.host + '/ws/webcam/');
@@ -29,4 +59,3 @@
     </script>
 </body>
 </html>
-
